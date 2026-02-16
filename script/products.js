@@ -26,6 +26,17 @@ const displayCategories = (categories) => {
     const categoriesContainer = document.getElementById("category-container");
     categoriesContainer.innerHTML = "";
 
+    const allButton = document.createElement("button");
+    allButton.innerText = "All";
+    allButton.className =
+        "btn mr-2 rounded-2xl text-blue-700 hover:bg-[#422AD5] hover:text-white";
+
+    allButton.addEventListener("click", () => {
+        loadProductsByCategory("all");
+    });
+
+    categoriesContainer.appendChild(allButton);
+
     categories.forEach((category) => {
 
         const button = document.createElement("button");
@@ -46,8 +57,7 @@ const displayCategories = (categories) => {
 // 3️⃣ Load Products By Category
 const loadProductsByCategory = async (category = "all") => {
 
-    document.getElementById("products-container").className =
-        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6";
+    document.getElementById("products-container").className = "md:px-40 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6";
 
     const url =
         category === "all"
@@ -59,6 +69,7 @@ const loadProductsByCategory = async (category = "all") => {
 
     displayProducts(data);
 };
+
 
 
 // 4️⃣ Display Products
@@ -73,8 +84,8 @@ const displayProducts = (products) => {
 
         card.innerHTML = `
             <div class="bg-white gap-3 rounded shadow flex flex-col h-full mx-auto ">
-                <div class="bg-slate-400">
-                <img src="${product.image}" class=" h-44 w-full object-contain ">
+                <div class="bg-gray-300">
+                <img src="${product.image}" class=" h-44 w-full p-3 object-contain ">
                 </div>
                 <div class="p-3">
                     <div class="flex justify-between">
@@ -85,11 +96,13 @@ const displayProducts = (products) => {
                     <h3 class="p-1 text-xs  rounded-xl">(${product.rating.count})</h3>
                     </div>
                 </div>
+                <div class="my-auto">
                 <h3 class="font-bold mt-3 line-clamp-2">${product.title}</h3>
                 <p class="text-gray-600 font-semibold">$${product.price}</p>
-                <div class="flex justify-between">
-                <button class="flex justify-center items-center gap-1 px-5 rounded-xl border border-purple-500 hover:bg-purple-500  hover:text-white transition-colors"><i class="fa-regular fa-eye"></i> Details</button>
-                <button class="flex justify-center items-center gap-1 px-5  rounded-xl border bg-indigo-400 border-purple-500 hover:bg-purple-500  hover:text-white transition-colors"><i class="fa-regular fa-eye"></i> Details</button>
+                </div>
+                <div class="flex justify-between ">
+                <button class="flex justify-center items-center gap-1 px-5 rounded-lg border border-purple-500 hover:bg-purple-500  hover:text-white transition-colors"><i class="fa-regular fa-eye"></i> Details</button>
+                <button class="flex justify-center items-center gap-1 px-5  rounded-lg border bg-indigo-400 border-purple-500 hover:bg-purple-500  hover:text-white transition-colors"><i class="fa-solid fa-cart-arrow-down"></i> Details</button>
                 </div>
                 </div>
             </div>
