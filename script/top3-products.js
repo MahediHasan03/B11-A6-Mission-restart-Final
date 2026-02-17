@@ -40,7 +40,7 @@ const displayTopProducts = (products) => {
                 </div>
                 <div class="flex justify-between ">
                 <button class="flex justify-center items-center gap-1 px-5 rounded-lg border border-purple-500 hover:bg-purple-500  hover:text-white transition-colors"><i class="fa-regular fa-eye"></i> Details</button>
-                <button class="flex justify-center items-center gap-1 px-5  rounded-lg border bg-indigo-400 border-purple-500 hover:bg-purple-500  hover:text-white transition-colors"><i class="fa-solid fa-cart-arrow-down"></i> Details</button>
+                <button class="flex justify-center items-center gap-1 px-5  rounded-lg border bg-indigo-400 border-purple-500 hover:bg-purple-500  hover:text-white transition-colors"><i class="fa-solid fa-cart-arrow-down"></i> Add</button>
                 </div>
                 </div>
             </div>
@@ -49,5 +49,7 @@ const displayTopProducts = (products) => {
    });
 
 };
+
+
 
 loadTopProducts();

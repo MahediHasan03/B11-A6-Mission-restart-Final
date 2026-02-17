@@ -5,13 +5,8 @@ function removeActiveClass() {
     }
 }
 
-// document.getElementById("products").addEventListener("click", function () {
-//     window.location.href = "./products.html";
-// });
 
-
-
-// 1️⃣ Load Categories
+//Load Categories
 const loadCategory = async () => {
 
     const response = await fetch("https://fakestoreapi.com/products/categories");
@@ -21,7 +16,7 @@ const loadCategory = async () => {
 };
 
 
-// 2️⃣ Display Category Buttons
+//Display Category Buttons
 const displayCategories = (categories) => {
 
     const categoriesContainer = document.getElementById("category-container");
@@ -55,7 +50,7 @@ const displayCategories = (categories) => {
 };
 
 
-// 3️⃣ Load Products By Category
+//Load Products By Category
 const loadProductsByCategory = async (category = "all") => {
 
     document.getElementById("products-container").className = "md:px-40 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6";
@@ -73,7 +68,7 @@ const loadProductsByCategory = async (category = "all") => {
 
 
 
-// 4️⃣ Display Products
+//Display Products
 const displayProducts = (products) => {
 
     const container = document.getElementById("products-container");
