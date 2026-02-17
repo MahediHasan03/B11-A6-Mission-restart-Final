@@ -84,6 +84,45 @@
             <div class="px-40" id="products-container">
 
             </div>
+            <!-- Open the modal using ID.showModal() method -->
+            <dialog id="my_modal_2" class="modal">
+                <div class="modal-box max-w-2xl">
+
+                    <img id="modalImage" class="h-48 mx-auto object-contain mb-4">
+
+                    <h3 id="modalTitle" class="text-xl font-bold mb-2"></h3>
+
+                    <p id="modalCategory" class="text-sm text-gray-500 mb-2"></p>
+
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-star text-yellow-500"></i>
+                        <span id="modalRating"></span>
+                    </div>
+
+                    <p id="modalPrice" class="font-semibold text-lg mb-3"></p>
+
+                    <p id="modalDescription" class="text-sm mb-4"></p>
+
+                    <div class="flex gap-3">
+                        <button class="bg-indigo-500 text-white px-6 py-2 rounded-lg hover:bg-indigo-700">
+                            Buy Now
+                        </button>
+                        <button
+                            class="border border-indigo-500 px-6 py-2 rounded-lg hover:bg-indigo-500 hover:text-white">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                </div>
+
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
+
+            <div id="productDetails-container" class="">
+
+            </div>
         </section>
     </main>
 
@@ -142,7 +181,7 @@
         <div class=" p-3 w-full md:w-5/6 border-b-2 border-gray-400 mx-auto"></div>
 
         <section class=" p-10 flex flex-col md:flex-row md:justify-between items-center gap-6">
-            
+
             <div class="flex gap-3 order-1 md:order-2">
                 <a href="#">
                     <svg class="w-6 h-6 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg"
@@ -180,7 +219,7 @@
                     </svg>
                 </a>
             </div>
-            
+
             <div class="order-2 md:order-1 text-center md:text-left">
                 <p>@2026 SwiftCart, Inc. All Rights reserved</p>
             </div>

@@ -5,9 +5,10 @@ function removeActiveClass() {
     }
 }
 
-document.getElementById("products").addEventListener("click", function () {
-    window.location.href = "./products.html";
-});
+// document.getElementById("products").addEventListener("click", function () {
+//     window.location.href = "./products.html";
+// });
+
 
 
 // 1️⃣ Load Categories
@@ -101,8 +102,9 @@ const displayProducts = (products) => {
                 <p class="text-gray-600 font-semibold">$${product.price}</p>
                 </div>
                 <div class="flex justify-between ">
-                <button class="flex justify-center items-center gap-1 px-5 rounded-lg border border-purple-500 hover:bg-purple-500  hover:text-white transition-colors"><i class="fa-regular fa-eye"></i> Details</button>
-                <button class="flex justify-center items-center gap-1 px-5  rounded-lg border bg-indigo-400 border-purple-500 hover:bg-purple-500  hover:text-white transition-colors"><i class="fa-solid fa-cart-arrow-down"></i> Details</button>
+                
+                <button onclick="handleDetails(${product.id})" class=" flex justify-center items-center gap-1 px-5 rounded-lg border border-purple-500 hover:bg-purple-500  hover:text-white transition-colors"><i class="fa-regular fa-eye"></i> Details</button>
+                <button class="flex justify-center items-center gap-1 px-5  rounded-lg border bg-indigo-400 border-purple-500 hover:bg-purple-500  hover:text-white transition-colors"><i class="fa-solid fa-cart-arrow-down"></i> Add</button>
                 </div>
                 </div>
             </div>
@@ -112,6 +114,26 @@ const displayProducts = (products) => {
     });
 };
 
+
+// HandleDetails
+
+const handleDetails = async (id) => {
+
+    const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+    const product = await response.json();
+
+    document.getElementById("modalTitle").innerText = product.title;
+    document.getElementById("modalPrice").innerText = "$" + product.price;
+    document.getElementById("modalDescription").innerText = product.description;
+    document.getElementById("modalCategory").innerText = product.category;
+
+    document.getElementById("modalRating").innerText =
+        product.rating.rate + " (" + product.rating.count + " reviews)";
+
+    document.getElementById("modalImage").src = product.image;
+
+    document.getElementById("my_modal_2").showModal();
+};
 
 // Load Everything Initially
 loadCategory();
