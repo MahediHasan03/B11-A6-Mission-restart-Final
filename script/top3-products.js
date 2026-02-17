@@ -25,8 +25,8 @@ const displayTopProducts = (products) => {
                 <div class="bg-gray-300">
                 <img src="${product.image}" class=" h-44 w-full p-3 object-contain ">
                 </div>
-                <div class="p-3">
-                    <div class="flex justify-between">
+                <div class="flex flex-col flex-grow p-3">
+                    <div class="flex justify-between ">
                     <h3 class="p-1 text-xs bg-purple-200 rounded-xl">${product.category}</h3>
                     <div class="flex items-center">
                     <i class="fa-solid fa-star text-yellow-500"></i>
@@ -38,7 +38,7 @@ const displayTopProducts = (products) => {
                 <h3 class="font-bold mt-3 line-clamp-2">${product.title}</h3>
                 <p class="text-gray-600 font-semibold">$${product.price}</p>
                 </div>
-                <div class="flex justify-between ">
+                <div class="flex justify-between mt-auto">
                 <button class="flex justify-center items-center gap-1 px-5 rounded-lg border border-purple-500 hover:bg-purple-500  hover:text-white transition-colors"><i class="fa-regular fa-eye"></i> Details</button>
                 <button class="flex justify-center items-center gap-1 px-5  rounded-lg border bg-indigo-400 border-purple-500 hover:bg-purple-500  hover:text-white transition-colors"><i class="fa-solid fa-cart-arrow-down"></i> Add</button>
                 </div>

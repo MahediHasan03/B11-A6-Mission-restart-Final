@@ -1,10 +1,3 @@
-function removeActiveClass() {
-    const activeButtons = document.getElementsByClassName("active");
-    for (let btn of activeButtons) {
-        btn.classList.remove("active");
-    }
-}
-
 
 //Load Categories
 const loadCategory = async () => {
@@ -83,7 +76,7 @@ const displayProducts = (products) => {
                 <div class="bg-gray-300">
                 <img src="${product.image}" class=" h-44 w-full p-3 object-contain ">
                 </div>
-                <div class="p-3">
+                <div class="flex flex-col flex-grow p-3">
                     <div class="flex justify-between">
                     <h3 class="p-1 text-xs bg-purple-200 rounded-xl">${product.category}</h3>
                     <div class="flex items-center">
@@ -130,6 +123,6 @@ const handleDetails = async (id) => {
     document.getElementById("my_modal_2").showModal();
 };
 
-// Load Everything Initially
+// Call
 loadCategory();
 loadProductsByCategory("all");
